@@ -1,0 +1,37 @@
+// input : 7891
+// output :  4
+#include<iostream>
+using namespace std;
+int CountDigits(int iNo)
+{
+   
+    static int iCount = 0;
+    
+    if(iNo != 0)
+    {
+       iCount++;
+       
+       CountDigits(iNo/10);  // Actual function chi value nhi change krt fkt call krtani change hote
+       
+
+     }
+
+     return iCount;
+
+    
+    
+}
+
+int main()
+{
+    int iValue = 0;
+    int iRet = 0;
+
+    cout<<"Enter number : \n";
+    cin>>iValue;
+
+    iRet = CountDigits(iValue);
+    cout<<"Number of digits are : "<<iRet<<"\n";
+
+    return 0;
+}
